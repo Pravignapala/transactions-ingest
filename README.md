@@ -1,5 +1,3 @@
-Markdown
-
 \# Retail Payments Platform — Transactions Ingest
 
 
