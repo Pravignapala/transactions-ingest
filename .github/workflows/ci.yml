@@ -21,13 +21,13 @@ jobs:
           dotnet-version: '10.0.x'
 
       - name: Restore Dependencies
-        run: dotnet restore TransactionsIngest.sln
+        run: dotnet restore tests/UnitTests/UnitTests.csproj
 
-      - name: Build Solution
-        run: dotnet build TransactionsIngest.sln --configuration Release --no-restore
+      - name: Build Solution & Projects
+        run: dotnet build tests/UnitTests/UnitTests.csproj --configuration Release --no-restore
 
       - name: Run Unit Tests
-        run: dotnet test TransactionsIngest.sln --configuration Release --no-build --verbosity normal
+        run: dotnet test tests/UnitTests/UnitTests.csproj --configuration Release --no-build --verbosity normal
 
   build-frontend:
     name: Build Angular Frontend
